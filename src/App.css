@@ -1,0 +1,221 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary-color:rgb(59, 224, 253);
+  --primary-light: #2abedb;
+  --primary-hover: #44ddcb;
+  --secondary-color: #8d8d8d;
+  --danger-color: #41d9ed;
+  --success-color: #17b417;
+  --light-color: #F4F1FB;
+  --dark-color: #1E1B2E;
+  --text-color: #F4F1FB;
+  --border-color: #2D1B42;
+  --shadow-lg: 0 10px 25px rgba(155, 93, 229, 0.3);
+  --transition: all 0.3s ease;
+  --gradient: #38e9f6;
+  --button-bg: #2D1B42;
+  --button-text: #e9542f;
+  --background: #1E1B2E;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: cursive;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background);
+  overflow-x: hidden;
+  width: 100%;
+  min-width: 100%;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  min-width: 100%;
+}
+
+main {
+  flex: 1;
+  padding: 2.5rem 0;
+  width: 100%;
+  min-width: 100%;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: var(--transition);
+  text-decoration: none;
+  font-size: 0.95rem;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.btn:hover::after {
+  transform: translateX(0);
+}
+
+.btn:hover {
+  box-shadow: 0 0 15px var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: var(--button-bg);
+  color: var(--button-text);
+  border: 1px solid var(--primary-color);
+}
+
+.btn-primary:hover {
+  background: var(--primary-color);
+  color: var(--light-color);
+  box-shadow: 0 0 15px var(--primary-color);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--light-color);
+  border: 1px solid var(--light-color);
+}
+
+.btn-secondary:hover {
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  box-shadow: 0 0 15px var(--light-color);
+}
+
+.btn-edit {
+  background: var(--button-bg);
+  color: var(--button-text);
+  border: 1px solid var(--primary-color);
+}
+
+.btn-edit:hover {
+  background: var(--primary-color);
+  color: var(--light-color);
+  box-shadow: 0 0 15px var(--primary-color);
+}
+
+.btn-delete {
+  background-color: transparent;
+  color: var(--danger-color);
+  border: 1px solid var(--danger-color);
+}
+
+.btn-delete:hover {
+  background-color: var(--danger-color);
+  color: var(--light-color);
+  box-shadow: 0 0 15px var(--danger-color);
+}
+
+.footer {
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  padding: 2rem 0;
+  text-align: center;
+  margin-top: 3rem;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  border-top: 1px solid var(--primary-color);
+}
+
+.footer p {
+  margin: 0.5rem 0;
+}
+
+.footer-credit {
+  margin-top: 5px;
+  font-size: 1.2rem;
+  color: var(--primary-light);
+}
+
+.footer strong {
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.footer strong:hover {
+  color: var(--primary-color);
+  text-shadow: 0 0 8px var(--primary-color);
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+main > div {
+  animation: fadeIn 0.5s ease-out;
+  width: 100%;
+}
+
+
+@media (max-width: 1200px) {
+  .container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+  }
+  
+  .btn {
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 0 1rem;
+    width: 100%;
+  }
+}
